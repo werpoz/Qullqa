@@ -15,6 +15,9 @@ class CreateTelephonesTable extends Migration
     {
         Schema::create('telephones', function (Blueprint $table) {
             $table->increments('id');
+            $table->unsignedInteger('clients_id')->nullable();
+            $table->unsignedInteger('providers_id')->nullable();
+            $table->string('number'); // example +51 (044) 999 888 666  
             $table->timestamps();
         });
     }

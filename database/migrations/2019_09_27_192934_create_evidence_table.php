@@ -15,6 +15,10 @@ class CreateEvidenceTable extends Migration
     {
         Schema::create('evidence', function (Blueprint $table) {
             $table->increments('id');
+            $table->unsignedInteger('images_id');
+            $table->unsignedDecimal('value');
+            $table->unsignedInteger('users_id');
+            $table->unsignedInteger('proformas_id');
             $table->timestamps();
         });
     }

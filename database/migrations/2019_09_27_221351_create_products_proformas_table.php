@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAdressesTable extends Migration
+class CreateProductsProformasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,11 @@ class CreateAdressesTable extends Migration
      */
     public function up()
     {
-        Schema::create('adresses', function (Blueprint $table) {
+        Schema::table('products_proformas', function (Blueprint $table) {
+            //
             $table->increments('id');
-            $table->unsignedInteger('clients_id')->nullable();
-            $table->unsignedInteger('providers_id')->nullable();
-            $table->string('description');
-            $table->timestamps();
+            $table->integer('alpha_id');
+            $table->integer('beta_id');
         });
     }
 
@@ -29,6 +28,8 @@ class CreateAdressesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('adresses');
+        Schema::table('products_proformas', function (Blueprint $table) {
+            //
+        });
     }
 }

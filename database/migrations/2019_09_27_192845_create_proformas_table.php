@@ -15,6 +15,10 @@ class CreateProformasTable extends Migration
     {
         Schema::create('proformas', function (Blueprint $table) {
             $table->increments('id');
+            $table->text('description');
+            $table->unsignedInteger('users_id');
+            $table->unsignedTinyInteger('type');
+            $table->boolean('status')->default(true);
             $table->timestamps();
         });
     }
